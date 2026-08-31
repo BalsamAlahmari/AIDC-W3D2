@@ -1,4 +1,3 @@
-# AIDC-W3D2
 # W3D2 — inference anatomy, by hand
 
 ## Objective
