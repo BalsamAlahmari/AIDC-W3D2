@@ -9,3 +9,10 @@ Measure the two halves of a response (time to first token, then the per-token ga
 * KV cache math for Qwen2.5-1.5B: 28 layers, 2 KV heads, head_dim 128, fp16. Per token that is 2 (K and V) x 28 x 2 x 128 x 2 bytes = **28 KB** per token. So a 4096-token context holds about **0.11 GB** of KV.
 * Static batching: if you pad 8 prompts of different lengths and run them as one batch, the batch finishes when the **longest** prompt finishes.
 
+
+## Verification step:
+
+ttft lengths: ['128', '2048', '512'], tpot_s: 0.0331
+batch tokens/s 1/4/8: 31.2/50.5/101.5
+KV measured 28.0 KB/token vs formula 28.0 KB/token
+GREEN CHECK: PASS
